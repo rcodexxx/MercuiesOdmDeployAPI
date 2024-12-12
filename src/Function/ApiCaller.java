@@ -100,11 +100,11 @@ public class ApiCaller {
         init();
         CloseableHttpClient client = getClient(user_DC, password_DC);
         String dsId = getDecisioServiceId(client, name);
-        logger.info("取得決策服務ID成功！");
+        logger.info("取得決策服務ID成功！, DecisionService id: " + dsId);
         String dpId = getDeploymentId(client, dsId);
-        logger.info("取得部屬ID成功！");
+        logger.info("取得部屬ID成功！, Deployment id: " + dpId);
         String blId = getBaselineId(client, dsId);
-        logger.info("取得UAT分支ID成功！");
+        logger.info("取得UAT分支ID成功！, Baselind id: " + blId);
         HttpGet httpGet = new HttpGet("https://" + ip_DC + ":9443/decisioncenter-api/v1/deployments/" + dpId
                 + "/download?baselineId=" + blId + "&includeXOMInArchive=true");
         httpGet.setHeader("Accept", "application/octet-stream");
