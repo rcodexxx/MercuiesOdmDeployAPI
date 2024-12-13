@@ -115,11 +115,11 @@ public class ApiCaller {
         httpEntity.writeTo(fos);
         fos.flush();
         fos.close();
-        try {
-        	DifferenceBaseline.doMergeProject(name, srNo);
-        } catch (Exception e) {
-        	e.printStackTrace();
-        }
+//        try {
+//        	DifferenceBaseline.doMergeProject(name, srNo);
+//        } catch (Exception e) {
+//        	e.printStackTrace();
+//        }
         Model.Response response = new Model.Response("000", "取得差異清單、差異報表和RuleApp保存檔成功！");
         logger.info("取得差異清單、差異報表和RuleApp保存檔成功！");
         ObjectMapper objectMapper = new ObjectMapper(); 
