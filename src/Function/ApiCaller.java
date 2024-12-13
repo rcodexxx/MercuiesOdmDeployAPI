@@ -94,7 +94,7 @@ public class ApiCaller {
     }
 
     public static String getRuleApp(String name, String srNo) throws ClientProtocolException, IOException,
-            KeyManagementException, NoSuchAlgorithmException, KeyStoreException {
+            KeyManagementException, NoSuchAlgorithmException, KeyStoreException, Exception {
         logger.info("呼叫取得RuleApp保存檔API...");
         testDelay(300000, 0);
         init();
@@ -115,11 +115,7 @@ public class ApiCaller {
         httpEntity.writeTo(fos);
         fos.flush();
         fos.close();
-//        try {
-//        	DifferenceBaseline.doMergeProject(name, srNo);
-//        } catch (Exception e) {
-//        	e.printStackTrace();
-//        }
+        DifferenceBaseline.doMergeProject(name, srNo);
         Model.Response response = new Model.Response("000", "取得差異清單、差異報表和RuleApp保存檔成功！");
         logger.info("取得差異清單、差異報表和RuleApp保存檔成功！");
         ObjectMapper objectMapper = new ObjectMapper(); 
