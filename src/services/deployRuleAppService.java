@@ -26,6 +26,29 @@ public class deployRuleAppService {
 	public Response getRuleApp(@PathParam("projectName") String name, @PathParam("SRNo") String srNo) throws Exception {
 		String resultJSON = "";
 		Model.Response response = null;
+//		try {
+//			String propertiesName = name.substring(0, name.indexOf("Rules"));
+//			String messageString = baselinesdiff.DifferenceBaseline.doMergeProject(propertiesName, srNo);
+//			if (!messageString.isEmpty()) {
+//				response = new Model.Response("001", messageString);
+//				ObjectMapper objectMapper = new ObjectMapper();
+//				resultJSON = objectMapper.writeValueAsString(response);
+//				return Response.status(Response.Status.OK).entity(resultJSON).build();
+//			}
+//		} catch (Exception e) {
+//			if (e.getClass().equals(NullPointerException.class)) {
+//				response = new Model.Response("002", "參數錯誤，請檢查專案名稱: " + name + " 是否正確！");
+//				logger.error("參數錯誤，請檢查專案名稱: " + name + " 是否正確！");
+//				logger.error(e.getMessage(), e);
+//			} else {
+//				response = new Model.Response("003", "差異清單和差異報表無法產生！");
+//				logger.error("差異清單和差異報表無法產生！");
+//				logger.error(e.getMessage(), e);
+//			}
+//			ObjectMapper objectMapper = new ObjectMapper();
+//			resultJSON = objectMapper.writeValueAsString(response);
+//			return Response.status(Response.Status.OK).entity(resultJSON).build();
+//		}
 		try {
 			resultJSON = ApiCaller.getRuleApp(name, srNo);
 		} catch (Exception e) {

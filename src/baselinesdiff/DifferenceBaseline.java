@@ -39,7 +39,6 @@ import baselinesdiff.model.Baseline;
 import ilog.rules.teamserver.brm.IlrActionRule;
 import ilog.rules.teamserver.brm.IlrBaseline;
 import ilog.rules.teamserver.brm.IlrDecisionTable;
-import ilog.rules.teamserver.client.IlrRemoteSessionFactory;
 import ilog.rules.teamserver.model.BranchHelper;
 import ilog.rules.teamserver.model.Change;
 import ilog.rules.teamserver.model.IlrApplicationException;
@@ -151,28 +150,6 @@ public class DifferenceBaseline {
 		diffReportName = prop.getProperty("out.report.name.diff");
 		ChecklistName = prop.getProperty("out.report.name.list");
 
-	}
-	
-	public static void connectDc() {
-		String serverUrl = "http://172.16.18.57/teamserver";
-		   String datasource = "jdbc/ilogDataSource";
-		   String login = "rtsAdmin";
-		   String password = "rtsAdmin";
-
-		   IlrRemoteSessionFactory factory = new IlrRemoteSessionFactory();
-		   try {
-		     factory.connect(login, password, serverUrl, datasource);
-		     IlrSession session = factory.getSession();
-		     logger.info("success connection");
-		     //Perform some actions
-		     //You should always close a session after actions are performed
-		     //to free up Decision Center resources and improve performance.
-		     session.close();
-		   }
-		   catch (IlrConnectException cE)
-		   {
-		     cE.printStackTrace();
-		   }
 	}
 
 	public static void getActionRule() throws Exception {
