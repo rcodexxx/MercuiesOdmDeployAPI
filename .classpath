@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="odm-deploy-api/src/main/java/com/firsttech/deployapi"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17"/>
 	<classpathentry kind="lib" path="odm-deploy-api/src/main/webapp/WEB-INF/lib/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="odm-deploy-api/src/main/webapp/WEB-INF/lib/aopalliance-1.0.jar"/>
 	<classpathentry kind="lib" path="odm-deploy-api/src/main/webapp/WEB-INF/lib/aopalliance-repackaged-2.6.1.jar"/>
